@@ -23,20 +23,16 @@ class App extends Component {
         })
     }
 
-    movieOnClick = () => {
-        this.state.doSearch();
-    }
-
     render = () => {
         return (
             <Router>
                 <Header searchCallBack={(genreList,myList,doSearchFn)=>{this.searchCallBack(genreList,myList,doSearchFn)}} />
                 <Switch>
                     <Route path="/myList" render={() => (
-                        <MovieGroupList groupList={this.state.myList} onClick={()=>{this.movieOnClick()}} />
+                        <MovieGroupList groupList={this.state.myList} onClick={()=>{this.state.doSearch()}} />
                     )}/>
                     <Route path="/" render={() => (
-                        <MovieGroupList groupList={this.state.genreList} onClick={()=>{this.movieOnClick()}} />
+                        <MovieGroupList groupList={this.state.genreList} onClick={()=>{this.state.doSearch()}} />
                     )}/>
                 </Switch>
             </Router>
