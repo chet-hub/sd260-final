@@ -2,7 +2,6 @@ import React from "react";
 import Movie from "./movie.jsx"
 
 export default function MovieList(props) {
-    let fn = (props.onClick instanceof Function) ?props.onClick : ()=>{};
     return props.movieList.length === 0 ? "": (
         <div className="titleList">
             <div className="title">
@@ -16,7 +15,7 @@ export default function MovieList(props) {
                                title={movie.title}
                                vote_average={movie.vote_average}
                                my_list={movie.my_list}
-                               onClick={fn}
+                               onClick={props.onClick}
                         />
                     ))}
                 </div>

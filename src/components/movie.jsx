@@ -8,7 +8,6 @@ export default class Movie extends React.Component {
     }
 
     addButtonHandle = ()=>{
-
         if(this.state.my_list === false){
             MovieAPI.addToList({id:this.state.id}).then(() => {
                 this.setState((prevState)=>{
